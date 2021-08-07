@@ -1,0 +1,31 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2  routerLink="/"> SIGN IN </h2>
+      <h2 class="inactive underlineHover" class="active"  routerLink="/inscreption">SING UP </h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoE2TmWFiOXnQunOXbWWTMLXfMJVG9L3lc3g&usqp=CAU" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form (ngSubmit)="register()">
+        <input type="text" id="login" class="fadeIn second" name="name"  [(ngModel)]="name" placeholder="Name">
+        <input type="text" id="login" class="fadeIn second" name="email"  [(ngModel)]="email" placeholder="Email">
+        <input type="text" id="password" class="fadeIn third" name="password" [(ngModel)]="password" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="SIGN UP">
+    
+        <ngx-recaptcha2 #captchaElem
+        [siteKey]="siteKey">
+      </ngx-recaptcha2>
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+ 

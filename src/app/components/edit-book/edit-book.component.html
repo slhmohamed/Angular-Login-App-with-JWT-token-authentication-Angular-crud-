@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+<form  (ngSubmit)="edit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Title</label>
+        <input type="text" class="form-control" id="inputEmail4" placeholder="Title"    name="title"  [(ngModel)]="book.title">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">ShortDescreption</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="ShortDescreption"   name="shortDescreption" [(ngModel)]="book.shortDescreption">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">longDescreption</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="LongDescreption"    name="longDescreption" [(ngModel)]="book.longDescreption">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Author </label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Author"  name="author"  value="{{book.author}}"  [(ngModel)]="book.author">
+    </div>
+    <div class="form-row">
+   
+      <div class="form-group col-md-4">
+        <label for="inputState">inStock</label>
+        <select id="inputState" class="form-control"  name="inStock"   value="{{book.inStock}}" [(ngModel)]="book.inStock">
+          <option value=true>Yes</option>
+          <option value=false>Non</option>
+ 
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Price</label>
+        <input type="number" class="form-control" id="inputZip" name="price"  value="{{book.price}}" [(ngModel)]="book.price">
+      </div>
+    </div>
+ 
+    <button style="margin-left: 780px;width: 100px;" type="submit" class="btn btn-primary">Update</button>
+  </form>
+ 
+ 

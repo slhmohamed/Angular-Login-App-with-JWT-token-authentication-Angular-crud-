@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+<div class="no-data text-center" *ngIf="noData">
+  
+  <p class="nodata-msg">No student added yet!</p>
+  
+</div>
+<table class="table">
+    <thead *ngIf="hideWhenNoStudent">
+      <tr>
+      
+        <th scope="col">Title</th>
+        <th scope="col">ShoartDescreption</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price</th>
+        <th scope="col">inStock</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let book of books| paginate: { itemsPerPage: 3, currentPage: p }; let i = index;">
+        <td>{{book.title}}</td>
+        <td>{{book.shortDescreption}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.inStock}}</td>
+        <button type="button" [routerLink]="['/edit-book/', book._id]" class="btn btn-primary">Updata</button>
+        <button type="button" (click)="delete(book._id)" class="btn btn-warning">Delete</button>
+ 
+      </tr>
+     
+    
+    </tbody>
+    
+  </table>
+  <pagination-controls *ngIf="hideWhenNoStudent" (pageChange)="p = $event"   previousLabel="CC"
+  nextLabel="Next"></pagination-controls>
